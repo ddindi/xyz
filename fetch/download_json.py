@@ -2,9 +2,9 @@
 import urllib2
 import json
 
-def download_json(input_link = 'https://api.github.com/search/repositories?q=language:python&sort=stars&order=desc',
+def download_json(query = 'https://api.github.com/search/repositories?q=language:python&sort=stars&order=desc',
 				 max_repos = 5): 
-	response = urllib2.urlopen(input_link)
+	response = urllib2.urlopen(query)
 	json_string = response.read()
 	data = json.loads(json_string)
 	for i, item in enumerate(data['items']):
